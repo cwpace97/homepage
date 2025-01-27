@@ -1,0 +1,47 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+
+- openmeteo:
+    label: Denver
+    latitude: 39.752899
+    longitude: -104.969276
+    hourly: temperature_2m #TODO is this doing anything?
+    timezone: America/Denver
+    units: imperial
+    cache: 15 # Time in minutes to cache API responses, to stay within limits
+
+- resources:
+    cpu: true
+    memory: true
+    cputemp: true
+    tempmin: 0
+    tempmax: 100
+    disk: /
+
+- stocks:
+    provider: finnhub
+    color: true # optional, defaults to true
+    cache: 1 # optional, default caches results for 1 minute
+    watchlist:
+      - SPOT
+      - GE
+      - ORCL
+      - WMT
+      - SPYG
+      - PYPL
+      - GEHC
+      - ZG
+      - GLBE
+      - BUD
+      - CRSP
+      - DKNG
+      - PFE
+      - UFO
+      - ET
+      - TASK
+      - NEP
+      - SPCE
+      - SFIX
+      - AMC

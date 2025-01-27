@@ -1,0 +1,77 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Self Hosted:
+    - Portainer:
+        icon: portainer
+        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}/#!/2/docker/containers"
+        description: List of containers running
+        server: localdocker
+        container: portainer
+        statusStyle: dot
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+            env: 2
+            key: "{{HOMEPAGE_VAR_PORTAINER_API_KEY}}"
+
+    - Prefect:
+        icon: https://avatars.githubusercontent.com/u/39270919?s=48&v=4
+        href: "{{HOMEPAGE_VAR_PREFECT_URL}}/dashboard"
+        description: Python orchestration tool
+        server: localdocker
+        container: prefect
+        statusStyle: dot
+        widgets:
+            - type: customapi
+              url: "{{HOMEPAGE_VAR_PREFECT_URL}}/api/work_pools/local-pool"
+              method: GET
+              mappings:
+                - field: status
+                  label: Local worker status
+                  format: text
+            - type: customapi
+              url: "{{HOMEPAGE_VAR_PREFECT_URL}}/api/deployments/count"
+              method: POST
+            #   requestBody: 
+            #     name: corduroy-scraper-copper
+              mappings:
+                - label: 
+                  format: number
+            - type: customapi
+              url: "{{HOMEPAGE_VAR_PREFECT_URL}}/api/deployments/get_scheduled_flow_runs"
+            #   url: GET /api/deployments/{id}/scheduled_flow_runs
+              method: POST
+              requestBody:
+                deployment_ids:
+                  - b0b9adec-769a-4331-b3d7-d4c589d9fb4c
+              mappings:
+                - 1:
+                  - field: id
+                    format: text
+                    label: test123
+                # - label:
+                #   format: size
+                
+
+
+    - MySQL:
+        icon: mysql
+        description: MySQL DB Status
+        server: localdocker
+        container: mysql-db-db-1
+        statusStyle: dot
+        showStats: true
+
+
+
+- My Second Group:
+    - My Second Service:
+        href: http://localhost/
+        description: Homepage is the best
+
+- My Third Group:
+    - My Third Service:
+        href: http://localhost/
+        description: Homepage is 😎

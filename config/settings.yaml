@@ -1,0 +1,11 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+theme: dark
+color: slate
+
+providers:
+  finnhub: "{{HOMEPAGE_VAR_API_KEY_FINNHUB}}"
+  # openweathermap: openweathermapapikey
+  # weatherapi: weatherapiapikey
