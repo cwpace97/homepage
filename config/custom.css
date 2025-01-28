@@ -1,0 +1,11 @@
+.ready {
+    color: green !important;
+    font-weight: bold !important;
+    font-size: calc(100% + 2px); /* Increase font size by 2px */
+}
+  
+.not-ready {
+    color: red !important;
+    font-weight: bold !important;
+    font-size: calc(100% + 2px); /* Increase font size by 2px */
+}

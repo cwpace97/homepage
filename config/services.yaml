@@ -29,32 +29,14 @@
               method: GET
               mappings:
                 - field: status
-                  label: Local worker status
+                  label: worker status
                   format: text
             - type: customapi
               url: "{{HOMEPAGE_VAR_PREFECT_URL}}/api/deployments/count"
               method: POST
-            #   requestBody: 
-            #     name: corduroy-scraper-copper
               mappings:
-                - label: 
+                - label: deployments
                   format: number
-            - type: customapi
-              url: "{{HOMEPAGE_VAR_PREFECT_URL}}/api/deployments/get_scheduled_flow_runs"
-            #   url: GET /api/deployments/{id}/scheduled_flow_runs
-              method: POST
-              requestBody:
-                deployment_ids:
-                  - b0b9adec-769a-4331-b3d7-d4c589d9fb4c
-              mappings:
-                - 1:
-                  - field: id
-                    format: text
-                    label: test123
-                # - label:
-                #   format: size
-                
-
 
     - MySQL:
         icon: mysql

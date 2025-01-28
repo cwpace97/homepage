@@ -13,35 +13,13 @@
     cache: 15 # Time in minutes to cache API responses, to stay within limits
 
 - resources:
+    label: Metrics
     cpu: true
     memory: true
     cputemp: true
     tempmin: 0
     tempmax: 100
-    disk: /
 
-- stocks:
-    provider: finnhub
-    color: true # optional, defaults to true
-    cache: 1 # optional, default caches results for 1 minute
-    watchlist:
-      - SPOT
-      - GE
-      - ORCL
-      - WMT
-      - SPYG
-      - PYPL
-      - GEHC
-      - ZG
-      - GLBE
-      - BUD
-      - CRSP
-      - DKNG
-      - PFE
-      - UFO
-      - ET
-      - TASK
-      - NEP
-      - SPCE
-      - SFIX
-      - AMC
+- resources:
+    label: Storage
+    disk: /
